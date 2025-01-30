@@ -77,6 +77,13 @@ npm run dev ou npm run build
 php artisan test
 ```
 
+Criando usuários fakes para teste
+```sh
+php artisan tinker
+\App\Models\Project::factory(10)->create();
+```
+Mudar o valor a partir da quantidade desejada
+
 Acessar o Projeto
 Após configurar tudo, o projeto estará disponível em:
 
