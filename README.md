@@ -17,7 +17,7 @@ Clonar Repositório
 Clone o repositório principal e os arquivos do Laravel:
 
 ```sh
-git clone https://github.com/especializati/setup-docker-laravel.git
+git clone https://github.com/especializati/setup-docker-laravel/tree/laravel-11-with-php-8.3
 git clone https://github.com/laravel/laravel.git app-laravel
 ```
 
