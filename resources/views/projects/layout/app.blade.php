@@ -21,7 +21,7 @@
                 </a>
 
                 <div class="navbar navbar-dropdown is-link">
-                    <a class="navbar-item">{{ Auth::user()->email }}</a>
+                    <a class="navbar-item" href="{{ route('projects.index') }}">Projetos</a>
                     <a class="navbar-item is-link" href="{{ route('profile.edit') }}">
                         Editar {{ __('Profile') }}
                     </a>
