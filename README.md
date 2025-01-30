@@ -4,89 +4,93 @@ O projeto laravel foi baseado em (https://github.com/laravel/laravel.git)
 
 # Setup Docker Para Projetos Laravel (8, 9, 10 ou 11)
 
-### Passo a passo
+Necessário ter o Docker o Node instalados;
 
-Clone Repositório
+Links:
 
-Em seu terminal clone o repositório
+
+# Setup do Projeto Laravel com Docker
+
+Este repositório contém instruções para configurar um ambiente de desenvolvimento Dockerizado para um projeto Laravel, incluindo Dockerfile, docker-compose.yml e configurações necessárias.
+
+Clonar Repositório
+Clone o repositório principal e os arquivos do Laravel:
 
 ```sh
-git clone https://github.com/especializati/setup-docker-laravel.git](https://github.com/especializati/setup-docker-laravel/tree/laravel-11-with-php-8.3
-```
-
-Clone os Arquivos do Laravel
-
-```sh
+git clone https://github.com/especializati/setup-docker-laravel.git
 git clone https://github.com/laravel/laravel.git app-laravel
 ```
 
-Copie os arquivos docker-compose.yml, Dockerfile e o diretório docker/ para o seu projeto
+Configurar o Projeto
+Copie os arquivos Docker e o diretório docker/ para o diretório do projeto Laravel:
 
 ```sh
 cp -rf setup-docker-laravel/* app-laravel/
-```
-
-```sh
 cd app-laravel/
 ```
 
-Crie o Arquivo .env
+Configurar Variáveis de Ambiente
+Crie o arquivo .env baseado no exemplo fornecido:
 
 ```sh
 cp .env.example .env
 ```
-Suba os containers do projeto
 
+Iniciar Containers Docker
+Inicie os containers Docker para o projeto:
 ```sh
 docker compose up -d
 ```
-
-Acessar o container
+Acessar o Container
+Para acessar o container da aplicação Laravel:
 
 ```sh
 docker compose exec app bash
 ```
 
-Instalar as dependências do projeto
+Instalar Dependências
+Dentro do container, instale as dependências do projeto Laravel:
 
 ```sh
 composer install
 ```
 
-Gerar a key do projeto Laravel
+Gerar Chave do Laravel
+Ainda dentro do container, gere a chave do projeto Laravel:
 
 ```sh
 php artisan key:generate
 ```
 
-Rodando as Migrations dentro do Laravel
-```sh
-docker compose exec app bash
+Executar Migrations
+Para rodar as migrations dentro do Laravel:
 
+```sh
 php artisan migrate
 ```
 
-Instalando o laravel/breeze para autenticação
+Instalar Laravel Breeze (Autenticação)
+Dentro do container, instale o Laravel Breeze para autenticação:
+
 ```sh
-docker compose exec app bash
-
 composer require laravel/breeze --dev
-
 php artisan breeze:install
 ```
-Configuração feita Blade with Alpine, Dark Mode e Pest
 
-FORA DO CONTAINER DOCKER (Necessário Node)
+Configuração Adicional (Blade, Alpine, Dark Mode, Pest)
+Fora do container Docker (requer Node.js), execute o seguinte:
 
-```sh[
+```sh
 npm install
-
 npm run dev ou npm run build
-
 php artisan test
 ```
-## Acessar o projeto
-# [http://localhost:8000]
+
+Acessar o Projeto
+Após configurar tudo, o projeto estará disponível em:
+
+## http://localhost:8000
+
 
 
 
