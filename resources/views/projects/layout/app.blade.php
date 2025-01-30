@@ -15,12 +15,12 @@
     <header class="container hero-head">
         <nav class="navbar-end">
             @auth
-            <div class="navbar navbar-item has-dropdown is-hoverable is-link">
-                <a class="navbar-link">
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar navbar-link is-link">
                     {{ Auth::user()->name }}
                 </a>
 
-                <div class="navbar-dropdown">
+                <div class="navbar navbar-dropdown is-link">
                     <a class="navbar-item">{{ Auth::user()->email }}</a>
                     <a class="navbar-item is-link" href="{{ route('profile.edit') }}">
                         Editar {{ __('Profile') }}
