@@ -47,9 +47,9 @@
     <tbody>
         @forelse ($projects as $project)
         <tr>
-            <td>{{$project->name}}</td>
-            <td><a href="{{ route('projects.show', $project->id )}}" class="button is-info">Vizualizar</a></td>
-            <td><a href="{{ route('projects.edit', $project->id )}}" class="button is-warning">Editar</a></td>
+            <td width="90%">{{$project->name}}</td>
+            <td width="5%"><a href="{{ route('projects.show', $project->id )}}" class="button is-info is-size-5">&#128065;</a></td>
+            <td width="5%"><a href="{{ route('projects.edit', $project->id )}}" class="button is-warning is-size-5">&#9998;</a></td>
         </tr>
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         @empty
