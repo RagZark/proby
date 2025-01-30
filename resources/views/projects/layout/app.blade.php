@@ -12,10 +12,35 @@
 
 <body>
     </div>
+    <header class="container hero-head">
+        <nav class="navbar-end">
+            @auth
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link is-link">
+                    {{ Auth::user()->name }}
+                </a>
+
+                <div class="navbar-dropdown">
+                    <a class="navbar-item">{{ Auth::user()->email }}</a>
+                    <a class="navbar-item is-link" href="{{ route('profile.edit') }}">
+                        Editar {{ __('Profile') }}
+                    </a>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <a class="navbar-item is-link" href="{{ route('logout') }}"
+                            onclick="event.preventDefault(); this.closest('form').submit();">
+                            {{ __('Log Out') }}
+                        </a>
+                    </form>
+                </div>
+            </div>
+            @endauth
+        </nav>
+    </header>
     <section class="hero is-primary is-fullheight-with-navbar">
 
         <div class="hero-body">
-            <div class="container has-text-centered">
+            <div class="container is-flex is-flex-direction-column has-text-centered">
                 @yield('content')
             </div>
         </div>
