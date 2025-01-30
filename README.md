@@ -74,7 +74,6 @@ Dentro do container, instale o Laravel Breeze para autenticação:
 
 ```sh
 composer require laravel/breeze --dev
-php artisan breeze:install
 ```
 
 Configuração Adicional (Blade, Alpine, Dark Mode, Pest)
