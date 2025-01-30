@@ -76,9 +76,6 @@ Dentro do container, instale o Laravel Breeze para autenticação:
 composer require laravel/breeze --dev
 ```
 
-Configuração Adicional (Blade, Alpine, Dark Mode, Pest)
-Fora do container Docker (requer Node.js), execute o seguinte:
-
 ```sh
 npm install
 npm run dev ou npm run build
