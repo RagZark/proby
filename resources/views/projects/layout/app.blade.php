@@ -15,8 +15,8 @@
     <header class="container hero-head">
         <nav class="navbar-end">
             @auth
-            <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link is-link">
+            <div class="navbar navbar-item has-dropdown is-hoverable is-link">
+                <a class="navbar-link">
                     {{ Auth::user()->name }}
                 </a>
 
