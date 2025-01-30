@@ -17,6 +17,4 @@
                     </x-nav-link>
                 </div>
             </div>
-
-
 </nav>

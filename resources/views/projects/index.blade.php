@@ -34,13 +34,15 @@
 <h1 class="is-size-1 ">Projetos</h1>
 
 </br>
-<a href="{{ route('projects.create') }}" class="button is-medium">Novo Projeto + </a>
+<a href="{{ route('projects.create') }}" class="button column is-2 is-offset-5">Novo Projeto + </a>
 </br>
 
 <table class="table">
     <thead>
         <tr>
-            <th>Nome</th>
+            <th class="has-text-centered">Nome do Projeto</th>
+            <th class="has-text-centered">Vizualizar</th>
+            <th class="has-text-centered">Editar</th>
         </tr>
     <tbody>
         @forelse ($projects as $project)
@@ -49,6 +51,7 @@
             <td><a href="{{ route('projects.show', $project->id )}}" class="button is-info">Vizualizar</a></td>
             <td><a href="{{ route('projects.edit', $project->id )}}" class="button is-warning">Editar</a></td>
         </tr>
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
         @empty
         <tr>
             <td colspan="100">Nenhum projeto no banco.</td>
