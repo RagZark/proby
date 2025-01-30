@@ -16,7 +16,7 @@
 @endif
 
 
-<form action="{{ route('projects.store') }}" method="post">
+<form action="{{ route('projects.store') }}" method="POST">
     @csrf()
     <input type="text" name="name" placeholder="Nome">
     <textarea name="description" rows="5" cols="33"></textarea>

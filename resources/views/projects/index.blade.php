@@ -4,7 +4,7 @@
 
 @section('content')
 
-<h1>Usuários</h1>
+<h1>Projetos</h1>
 
 <a href="{{ route('projects.create') }}">Novo Projeto</a>
 
@@ -20,7 +20,6 @@
             <td>{{$project->name}}</td>
             <td><a href="{{ route('projects.show', $project->id )}}" class="button is-info">Vizualizar</a></td>
             <td><a href="{{ route('projects.edit', $project->id )}}" class="button is-warning">Editar</a></td>
-            <td><a href="?" class="button is-danger">Deletar</a></td>
         </tr>
         @empty
         <tr>

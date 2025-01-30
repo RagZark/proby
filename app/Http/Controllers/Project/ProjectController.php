@@ -35,9 +35,9 @@ class ProjectController extends Controller
             'status' => [new Enum(ProjectStatusEnum::class)],
         ]);
 
-        Project::create($request->all());
+        $project = Project::create($request->all());
 
-        return redirect()->route('projects.show');
+        return redirect()->route('projects.show', $project->id);
     }
 
     public function edit(string $id)
@@ -58,7 +58,7 @@ class ProjectController extends Controller
             'name'
         ]));
 
-        return redirect()->route('projects.show');
+        return redirect()->route('projects.show', $project->id);
     }
 
     public function show(string $id)
@@ -67,5 +67,16 @@ class ProjectController extends Controller
             return back()->with('message', 'Projeto não encontrado.');
         }
         return view('projects.show', compact('project'));
+    }
+
+    public function destroy(string $id)
+    {
+        if (!$project = Project::find($id)) {
+            return back()->with('message', 'Projeto não encontrado.');
+        }
+
+        $project->delete();
+
+        return redirect()->route('projects.index')->with('sucess', 'Projeto deletado com sucesso');
     }
 }
