@@ -4,11 +4,6 @@ O projeto laravel foi baseado em (https://github.com/laravel/laravel.git)
 
 # Setup Docker Para Projetos Laravel (8, 9, 10 ou 11)
 
-Necessário ter o Docker o Node instalados;
-
-Links:
-
-
 # Setup do Projeto Laravel com Docker
 
 Este repositório contém instruções para configurar um ambiente de desenvolvimento Dockerizado para um projeto Laravel, incluindo Dockerfile, docker-compose.yml e configurações necessárias.
