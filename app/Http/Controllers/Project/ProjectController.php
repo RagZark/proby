@@ -13,7 +13,9 @@ class ProjectController extends Controller
 {
     public function index()
     {
-        return view('projects.index');
+        $projects = Project::paginate(20);
+
+        return view('projects.index', compact('projects'));
     }
 
     public function create()
@@ -35,6 +37,35 @@ class ProjectController extends Controller
 
         Project::create($request->all());
 
-        return redirect()->route('projects.index');
+        return redirect()->route('projects.show');
+    }
+
+    public function edit(string $id)
+    {
+        if (!$project = Project::find($id)) {
+            return redirect()->route('project.index')->with('message', 'Projeto não encontrado.');
+        }
+
+        return view('projects.edit', compact('project'));
+    }
+
+    public function update(Request $request, string $id)
+    {
+        if (!$project = Project::find($id)) {
+            return back()->with('message', 'Projeto não encontrado.');
+        }
+        $project->update($request->only([
+            'name'
+        ]));
+
+        return redirect()->route('projects.show');
+    }
+
+    public function show(string $id)
+    {
+        if (!$project = Project::find($id)) {
+            return back()->with('message', 'Projeto não encontrado.');
+        }
+        return view('projects.show', compact('project'));
     }
 }
